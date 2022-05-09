@@ -1,3 +1,23 @@
+var container = document.querySelector(".container");
+container.addEventListener("click", function(event) {
+    var element = event.target;
+    
+    let value = element.getAttribute("data-number");
+    
+    var state = element.getAttribute("data-state");
+  
+    if (state === "hidden") {
+      element.textContent =  value;
+      element.setAttribute("data-state", "hidden")
+    }
+  
+    else {
+      element.textContent = "";
+      element.setAttribute("data-state", "revealed");
+    }
+    
+  });
+
 function start() {
     var startButton = document.querySelector("#start");
     startButton.addEventListener("click", () => {
@@ -12,7 +32,7 @@ function countDown() {
     document.getElementById("time").innerHTML = timer;
     if (timer <= 0) {
         clearInterval(timerInterval);
-        saveYourScore();
+        //saveScore();
     }
     else {
         timer--;
@@ -23,20 +43,13 @@ function quizQuestions() {
     let questionNumber = 0;
 
     if (questionNumber >= 3) {
-        saveYourScore();
+        //saveScore();
     }
     var tofQuestions = document.querySelector("#tof");
     tofQuestions.innerText = questions[questionNumber].question;
 
-    var answerButtons = document.querySelectorAll(".button");
 
     
-    for (i = 0; i < questions[questionNumber].answers.length; i++) {
-        const answerOption = questions[questionNumber].answers[i];
-        answerButtons[i].innerText = answerOption.answer;
-        answerButtons[i].setAttribute("data-is-correct", answerOption.isCorrect);
-        
-    }
     questionNumber += 1;
      
     
@@ -84,5 +97,6 @@ var questions = [
             }, ],
         }
 ];
+
 
 start();
