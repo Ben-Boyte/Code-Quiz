@@ -28,7 +28,7 @@ function quizQuestions() {
     var tofQuestions = document.querySelector("#tof");
     tofQuestions.innerText = questions[questionNumber].question;
 
-    var answerButtons = document.querySelectorAll(".js-btn-question");
+    var answerButtons = document.querySelectorAll(".button");
 
     
     for (i = 0; i < questions[questionNumber].answers.length; i++) {
