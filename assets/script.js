@@ -32,7 +32,6 @@ function countDown() {
     document.getElementById("time").innerHTML = timer;
     if (timer <= 0) {
         clearInterval(timerInterval);
-        //saveScore();
     }
     else {
         timer--;
@@ -42,16 +41,12 @@ function countDown() {
 function quizQuestions() {
     let questionNumber = 0;
 
-    if (questionNumber >= 3) {
-        //saveScore();
+    if (questionNumber >= 4) {
     }
     var tofQuestions = document.querySelector("#tof");
     tofQuestions.innerText = questions[questionNumber].question;
 
-
-    
     questionNumber += 1;
-     
     
 }
 
