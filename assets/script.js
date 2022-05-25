@@ -1,4 +1,11 @@
 var container = document.querySelector(".container");
+var trueAnswer = document.querySelector("#true");
+var falseAnswer = document.querySelector("#false");
+
+trueAnswer.addEventListener("click", quizQuestions);
+
+falseAnswer.addEventListener("click", quizQuestions);
+
 container.addEventListener("click", function(event) {
     var element = event.target;
     
@@ -38,14 +45,15 @@ function countDown() {
         }
 };
 
-function quizQuestions() {
-    let questionNumber = 0;
+let questionNumber = 0;
 
-    if (questionNumber >= 4) {
-    }
+function quizQuestions() {
+  
+console.log(questionNumber);
+//    if (questionNumber >= 4) {
+//     }
     var tofQuestions = document.querySelector("#tof");
     tofQuestions.innerText = questions[questionNumber].question;
-
     questionNumber += 1;
     
 }
